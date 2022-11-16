@@ -1,0 +1,94 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} OPTIONS\PYGZus{}GHC \PYGZhy{}Wno\PYGZhy{}unrecognised\PYGZhy{}pragmas \PYGZsh{}\PYGZhy{}\PYGZcb{}}
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} HLINT ignore \PYGZdq{}Use guards\PYGZdq{} \PYGZsh{}\PYGZhy{}\PYGZcb{}}
+
+\PYG{k+kr}{data} \PYG{k+kt}{Point} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{p}{\PYGZob{}}
+    \PYG{n}{px} \PYG{o+ow}{::} \PYG{k+kt}{Float}\PYG{p}{,}
+    \PYG{n}{py} \PYG{o+ow}{::} \PYG{k+kt}{Float}
+\PYG{p}{\PYGZcb{}} \PYG{k+kr}{deriving} \PYG{p}{(}\PYG{k+kt}{Eq}\PYG{p}{,} \PYG{k+kt}{Ord}\PYG{p}{,} \PYG{k+kt}{Show}\PYG{p}{)}
+
+\PYG{k+kr}{data} \PYG{k+kt}{Vector} \PYG{o+ow}{=} \PYG{k+kt}{MkVector} \PYG{p}{\PYGZob{}}
+    \PYG{n}{vx} \PYG{o+ow}{::} \PYG{k+kt}{Float}\PYG{p}{,}
+    \PYG{n}{vy} \PYG{o+ow}{::} \PYG{k+kt}{Float}
+\PYG{p}{\PYGZcb{}}\PYG{k+kr}{deriving} \PYG{p}{(}\PYG{k+kt}{Eq}\PYG{p}{,} \PYG{k+kt}{Ord}\PYG{p}{,} \PYG{k+kt}{Show}\PYG{p}{)}
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZcb{}}
+\PYG{c+cm}{data Triangle = MkTriangle Point Point Point}
+\PYG{c+cm}{data Quad = MkQuad Point Point Point Point}
+
+\PYG{c+cm}{class Polygon p where}
+\PYG{c+cm}{    area            :: Polygon p =\PYGZgt{} p \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{    translate\PYGZus{}poly  :: Polygon p =\PYGZgt{} p \PYGZhy{}\PYGZgt{} Vector \PYGZhy{}\PYGZgt{} p}
+\PYG{c+cm}{    scale\PYGZus{}poly      :: Polygon p =\PYGZgt{} p \PYGZhy{}\PYGZgt{} Float \PYGZhy{}\PYGZgt{} p}
+\PYG{c+cm}{\PYGZhy{}\PYGZcb{}}
+
+\PYG{n+nf}{tt} \PYG{o+ow}{::} \PYG{k+kt}{Triangle}
+\PYG{n+nf}{tt} \PYG{o+ow}{=} \PYG{k+kt}{MkTriangle} \PYG{n}{x1} \PYG{n}{x2} \PYG{n}{x3}
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZcb{}}
+\PYG{c+cm}{translate :: Point \PYGZhy{}\PYGZgt{} Vector \PYGZhy{}\PYGZgt{} Point}
+\PYG{c+cm}{translate (MkPoint p1 p2) (MkVector v1 v2) = MkPoint (p1+v1) (p2+v2)}
+
+\PYG{c+cm}{scale :: Float \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Point}
+\PYG{c+cm}{scale factor (MkPoint p1 p2) = MkPoint (factor * p1) (factor * p2)}
+\PYG{c+cm}{\PYGZhy{}\PYGZcb{}}
+\PYG{n+nf}{x1} \PYG{o+ow}{::} \PYG{k+kt}{Point}
+\PYG{n+nf}{x1} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{l+m+mi}{2} \PYG{l+m+mi}{2}
+
+\PYG{n+nf}{x2} \PYG{o+ow}{::} \PYG{k+kt}{Point}
+\PYG{n+nf}{x2} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{l+m+mi}{8} \PYG{l+m+mi}{2}
+
+\PYG{n+nf}{x3} \PYG{o+ow}{::} \PYG{k+kt}{Point}
+\PYG{n+nf}{x3} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{l+m+mi}{7} \PYG{l+m+mi}{5}
+
+\PYG{n+nf}{v1}\PYG{o+ow}{::} \PYG{k+kt}{Vector}
+\PYG{n+nf}{v1} \PYG{o+ow}{=} \PYG{k+kt}{MkVector} \PYG{l+m+mi}{2} \PYG{l+m+mi}{2}
+
+\PYG{n+nf}{getXfromPoint} \PYG{o+ow}{::} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{getXfromPoint} \PYG{p}{(}\PYG{k+kt}{MkPoint} \PYG{n}{px} \PYG{n}{py}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{px}
+
+\PYG{n+nf}{getYfromPoint} \PYG{o+ow}{::} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{getYfromPoint} \PYG{p}{(}\PYG{k+kt}{MkPoint} \PYG{n}{px} \PYG{n}{py}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{py}
+
+\PYG{n+nf}{getXfromVector} \PYG{o+ow}{::} \PYG{k+kt}{Vector} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{getXfromVector} \PYG{p}{(}\PYG{k+kt}{MkVector} \PYG{n}{vx} \PYG{n}{vy}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{vx}
+
+\PYG{n+nf}{getYfromVector} \PYG{o+ow}{::} \PYG{k+kt}{Vector} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{getYfromVector} \PYG{p}{(}\PYG{k+kt}{MkVector} \PYG{n}{vx} \PYG{n}{vy}\PYG{p}{)} \PYG{o+ow}{=} \PYG{n}{vy}
+
+\PYG{n+nf}{translate} \PYG{o+ow}{::} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Vector} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Point}
+\PYG{n+nf}{translate} \PYG{n}{p} \PYG{n}{v} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{p}{(}\PYG{n}{getXfromPoint} \PYG{n}{p} \PYG{o}{+} \PYG{n}{getXfromVector} \PYG{n}{v}\PYG{p}{)} \PYG{p}{(}\PYG{n}{getYfromPoint} \PYG{n}{p} \PYG{o}{+} \PYG{n}{getYfromVector} \PYG{n}{v}\PYG{p}{)}
+
+\PYG{n+nf}{scale} \PYG{o+ow}{::} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Point}
+\PYG{n+nf}{scale} \PYG{n}{p} \PYG{n}{f} \PYG{o+ow}{=} \PYG{k+kt}{MkPoint} \PYG{p}{(}\PYG{n}{f}\PYG{o}{*}\PYG{n}{getXfromPoint} \PYG{n}{p}\PYG{p}{)} \PYG{p}{(}\PYG{n}{f}\PYG{o}{*}\PYG{n}{getYfromPoint} \PYG{n}{p}\PYG{p}{)}
+
+\PYG{n+nf}{lengthBetweenTwoPoints} \PYG{o+ow}{::} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Point} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Float}
+\PYG{n+nf}{lengthBetweenTwoPoints} \PYG{n}{p1} \PYG{n}{p2} \PYG{o+ow}{=} \PYG{n}{sqrt}\PYG{p}{((}\PYG{n}{getXfromPoint} \PYG{n}{p1}\PYG{o}{\PYGZhy{}}\PYG{n}{getXfromPoint} \PYG{n}{p2}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{p}{(}\PYG{n}{getYfromPoint} \PYG{n}{p1}\PYG{o}{\PYGZhy{}} \PYG{n}{getYfromPoint} \PYG{n}{p2}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{k+kr}{data} \PYG{k+kt}{Triangle} \PYG{o+ow}{=} \PYG{k+kt}{MkTriangle} \PYG{p}{\PYGZob{}}
+    \PYG{n}{p1} \PYG{o+ow}{::} \PYG{k+kt}{Point}\PYG{p}{,}
+    \PYG{n}{p2} \PYG{o+ow}{::} \PYG{k+kt}{Point}\PYG{p}{,}
+    \PYG{n}{p3} \PYG{o+ow}{::} \PYG{k+kt}{Point}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}}
+\PYG{c+cm}{lengthBetweenTwoPoints :: Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2) = sqrt((x1\PYGZhy{}x2)\PYGZca{}2 + (y1\PYGZhy{}y2)\PYGZca{}2)}
+
+\PYG{c+cm}{findGround :: Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{findGround (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) }
+\PYG{c+cm}{    | (lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2) \PYGZgt{} lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3)) || (lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2) \PYGZgt{} lengthBetweenTwoPoints (MkPoint x2 y2) (MkPoint x3 y3)) = lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2)}
+\PYG{c+cm}{    | (lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3) \PYGZgt{} lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2)) || (lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3) \PYGZgt{} lengthBetweenTwoPoints (MkPoint x2 y2) (MkPoint x3 y3)) = lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3)}
+\PYG{c+cm}{    | otherwise = lengthBetweenTwoPoints (MkPoint x2 y2) (MkPoint x3 y3)}
+
+\PYG{c+cm}{calculateHalfOfSumEdge :: Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{calculateHalfOfSumEdge (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) = 0.5 * (lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2) + lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3) +lengthBetweenTwoPoints (MkPoint x2 y2) (MkPoint x3 y3))}
+
+\PYG{c+cm}{calculateHeight :: Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{calculateHeight (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) = (2/findGround (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3))*sqrt(calculateHalfOfSumEdge (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)*(calculateHalfOfSumEdge (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)\PYGZhy{}lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x2 y2))*(calculateHalfOfSumEdge (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)\PYGZhy{}lengthBetweenTwoPoints (MkPoint x1 y1) (MkPoint x3 y3))*(calculateHalfOfSumEdge (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)\PYGZhy{}lengthBetweenTwoPoints (MkPoint x2 y2) (MkPoint x3 y3)))}
+
+\PYG{c+cm}{areatri :: Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Point \PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{areatri (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) = 0.5* findGround (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) * calculateHeight (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)}
+
+\PYG{c+cm}{area :: Triangle\PYGZhy{}\PYGZgt{} Float}
+\PYG{c+cm}{area (MkTriangle(MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)) = 0.5* findGround (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3) * calculateHeight (MkPoint x1 y1) (MkPoint x2 y2) (MkPoint x3 y3)}
+\PYG{c+cm}{\PYGZhy{}\PYGZcb{}}
+\end{Verbatim}
