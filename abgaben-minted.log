@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.7)  16 NOV 2022 19:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.11.7)  16 NOV 2022 21:41
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1287,12 +1287,7 @@ File: ./images//2022_11_15_0a5a2eee0aef383b0ce9g-3.jpg Graphic file (type jpg)
 <use ./images//2022_11_15_0a5a2eee0aef383b0ce9g-3.jpg>
 Package pdftex.def Info: ./images//2022_11_15_0a5a2eee0aef383b0ce9g-3.jpg  used on input line 129.
 (pdftex.def)             Requested size: 199.16928pt x 50.16766pt.
- (_minted-abgaben-minted/E44A362DFE52849E3D08407AE0277DBE93791E5D21DE665EECEAFFA390BAEB05.pygtex [7 <./images//2022_11_15_0a5a2eee0aef383b0ce9g-3.jpg>]) [8] (_minted-abgaben-minted/8C7347BFEFEBEE7DA872C4DE028EF7E393791E5D21DE665EECEAFFA390BAEB05.pygtex
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: TS1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [9]) [10] (abgaben-minted.aux)
+ (_minted-abgaben-minted/E44A362DFE52849E3D08407AE0277DBE93791E5D21DE665EECEAFFA390BAEB05.pygtex [7 <./images//2022_11_15_0a5a2eee0aef383b0ce9g-3.jpg>]) [8] (_minted-abgaben-minted/09703C210D045875BDEDEB0C03E3C47293791E5D21DE665EECEAFFA390BAEB05.pygtex [9]) [10] (abgaben-minted.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1301,17 +1296,17 @@ Package rerunfilecheck Info: File `abgaben-minted.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 38407 strings out of 475380
- 764889 string characters out of 2776772
+ 38402 strings out of 475380
+ 764806 string characters out of 2776772
  1322028 words of memory out of 3000000
- 58993 multiletter control sequences out of 15000+600000
- 509563 words of font info for 177 fonts, out of 8000000 for 9000
+ 58989 multiletter control sequences out of 15000+600000
+ 509266 words of font info for 176 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,22n,109p,10803b,1189s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\felix\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt0900.pk> <C:\Users\felix\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
-Output written on abgaben-minted.pdf (10 pages, 349177 bytes).
+ <C:\Users\felix\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/felix/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb>
+Output written on abgaben-minted.pdf (10 pages, 349082 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 138 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
- 42022 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 41510 words of extra memory for PDF output out of 42996 (max. 10000000)
 
