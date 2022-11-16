@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}}
+\PYG{c+cm}{Zum Vergleich des Argumentes s in isCold ist eine Ableitung der Klasse Eq notwendig.}
+\PYG{c+cm}{Durch das Ableiten aus der Klasse Ord werden die Jahreszeiten in eine totale}
+\PYG{c+cm}{Ordnung gebracht und die Operationen \PYGZlt{}, \PYGZgt{}, \PYGZlt{}=, \PYGZgt{}= für die Funktion beforeAutmn ermöglicht.}
+\PYG{c+cm}{Durch das Ableiten aus der Klasse Enum werden die Jahreszeiten den Integern von 0\PYGZhy{}3 zugeordnet.}
+\PYG{c+cm}{Das Ableiten der Klasse Show ermögicht die Ausgabe von Spring bzw Enum 0 in printFirstSeason }
+\PYG{c+cm}{in der Konsole.}
+\PYG{c+cm}{\PYGZhy{}\PYGZcb{}}
+
+
+\PYG{k+kr}{data} \PYG{k+kt}{Season} \PYG{o+ow}{=} \PYG{k+kt}{Spring} \PYG{o}{|} \PYG{k+kt}{Summer} \PYG{o}{|} \PYG{k+kt}{Autumn} \PYG{o}{|} \PYG{k+kt}{Winter} \PYG{k+kr}{deriving} \PYG{p}{(}\PYG{k+kt}{Eq}\PYG{p}{,} \PYG{k+kt}{Ord}\PYG{p}{,} \PYG{k+kt}{Enum}\PYG{p}{,} \PYG{k+kt}{Show}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Testing if a season is cold}
+\PYG{n+nf}{isCold} \PYG{o+ow}{::} \PYG{k+kt}{Season} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Bool}
+\PYG{n+nf}{isCold} \PYG{n}{s}
+    \PYG{o}{|} \PYG{n}{s} \PYG{o}{==} \PYG{k+kt}{Winter} \PYG{o+ow}{=} \PYG{k+kt}{True}
+    \PYG{o}{|} \PYG{n}{otherwise} \PYG{o+ow}{=} \PYG{k+kt}{False}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Is there sill time until it is autumn?}
+\PYG{n+nf}{beforeAutumn} \PYG{o+ow}{::} \PYG{k+kt}{Season} \PYG{o+ow}{\PYGZhy{}\PYGZgt{}} \PYG{k+kt}{Bool}
+\PYG{n+nf}{beforeAutumn} \PYG{n}{s}
+    \PYG{o}{|} \PYG{n}{s} \PYG{o}{\PYGZlt{}} \PYG{k+kt}{Autumn} \PYG{o+ow}{=} \PYG{k+kt}{True}
+    \PYG{o}{|} \PYG{n}{otherwise} \PYG{o+ow}{=} \PYG{k+kt}{False}
+\PYG{c+c1}{\PYGZhy{}\PYGZhy{} Print first season}
+\PYG{n+nf}{printFirstSeason} \PYG{o+ow}{::} \PYG{k+kt}{Season}
+\PYG{n+nf}{printFirstSeason} \PYG{o+ow}{=} \PYG{n}{toEnum} \PYG{l+m+mi}{0}
+\end{Verbatim}

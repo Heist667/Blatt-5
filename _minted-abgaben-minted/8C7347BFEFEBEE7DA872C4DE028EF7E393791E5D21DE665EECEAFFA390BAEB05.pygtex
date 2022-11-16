@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} OPTIONS\PYGZus{}GHC \PYGZhy{}Wno\PYGZhy{}unrecognised\PYGZhy{}pragmas \PYGZsh{}\PYGZhy{}\PYGZcb{}}
+\PYG{c+cm}{\PYGZob{}\PYGZhy{}\PYGZsh{} HLINT ignore \PYGZdq{}Use newtype instead of data\PYGZdq{} \PYGZsh{}\PYGZhy{}\PYGZcb{}}
+\PYG{k+kr}{data} \PYG{k+kt}{Currency} \PYG{o+ow}{=} \PYG{k+kt}{MkCurrency} \PYG{p}{\PYGZob{}}
+    \PYG{n}{coins} \PYG{o+ow}{::} \PYG{k+kt}{Integer}\PYG{p}{,}
+    \PYG{n}{cents} \PYG{o+ow}{::} \PYG{k+kt}{Integer}\PYG{p}{,}
+    \PYG{n}{currency} \PYG{o+ow}{::} \PYG{k+kt}{String}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{instance} \PYG{k+kt}{Show} \PYG{k+kt}{Currency} \PYG{k+kr}{where}
+    \PYG{n}{show}\PYG{p}{(}\PYG{k+kt}{MkCurrency} \PYG{n}{coins} \PYG{n}{cents} \PYG{n}{currency}\PYG{p}{)} \PYG{o+ow}{=} 
+        \PYG{k+kr}{if} \PYG{n}{currency} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}€\PYGZdq{}} \PYG{o}{||} \PYG{n}{currency} \PYG{o}{==} \PYG{l+s}{\PYGZdq{}\PYGZdl{}\PYGZdq{}} 
+        \PYG{k+kr}{then} \PYG{n}{show} \PYG{n}{coins} \PYG{o}{++} \PYG{l+s}{\PYGZdq{},\PYGZdq{}} \PYG{o}{++} \PYG{n}{show} \PYG{n}{cents} \PYG{o}{++} \PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{o}{++} \PYG{n}{currency}
+        \PYG{k+kr}{else} \PYG{n}{show} \PYG{n}{coins} \PYG{o}{++} \PYG{l+s}{\PYGZdq{} \PYGZdq{}} \PYG{o}{++} \PYG{n}{currency}
+
+\PYG{n+nf}{myEuro} \PYG{o+ow}{::} \PYG{k+kt}{Currency}
+\PYG{n+nf}{myEuro} \PYG{o+ow}{=} \PYG{k+kt}{MkCurrency} \PYG{l+m+mi}{12} \PYG{l+m+mi}{03} \PYG{l+s}{\PYGZdq{}€\PYGZdq{}}
+
+\PYG{n+nf}{myDollar} \PYG{o+ow}{::} \PYG{k+kt}{Currency}
+\PYG{n+nf}{myDollar} \PYG{o+ow}{=} \PYG{k+kt}{MkCurrency} \PYG{l+m+mi}{14} \PYG{l+m+mi}{60} \PYG{l+s}{\PYGZdq{}\PYGZdl{}\PYGZdq{}}
+
+\PYG{n+nf}{myYen} \PYG{o+ow}{::} \PYG{k+kt}{Currency}
+\PYG{n+nf}{myYen} \PYG{o+ow}{=} \PYG{k+kt}{MkCurrency} \PYG{l+m+mi}{120} \PYG{l+m+mi}{0} \PYG{l+s}{\PYGZdq{}Yen\PYGZdq{}}
+\end{Verbatim}

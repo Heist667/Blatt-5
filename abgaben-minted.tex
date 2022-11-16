@@ -38,9 +38,7 @@
 \begin{document}
 \graphicspath{ {./images/} }
 
-\textbf{Aufgabe T5.1:} Code verstehen
-
-(1+1=2 Punkte )
+\textbf{Aufgabe T5.1:} Code verstehen (1+1=2 Punkte )
 
 Sie finden online einen fertigen Programmcode, der wohl etwas hastig geschrieben wurde. Die sehr ineffizient gestaltete Funktion 
 wurde wie folgt implementiert:
@@ -50,16 +48,18 @@ wurde wie folgt implementiert:
 \begin{itemize}
   \item [(a)] Fassen Sie zusammen, welche Eigenschaften von $n$ und $m$ erfüllt sein müssen, damit die Funktion True zurückgibt.
 
+  $(n \le m) \land (n \cdot m \ge 42)$
+
   \item [(b)] Die Funktion lässt sich in einem einzigen booleschen Ausdruck darstellen. Geben Sie die entsprechende Funktion als 
   Haskellcode (schriftlich) an.
+
+  \inputminted{Haskell}{A5_1.hs}
   
 \end{itemize}
 
 \newpage
 
-\textbf{Aufgabe T5.2:} Abgeleitete Klassen
-
-(2 Punkte)
+\textbf{Aufgabe T5.2:} Abgeleitete Klassen (2 Punkte)
 
 In der Vorlesung haben sie Standard-Typklassen wie Ord, Enum oder Num kennengelernt. Im folgenden Programmcode wird ein neuer 
 Datentyp Season definiert:
@@ -72,6 +72,12 @@ Ausgehend von den gegebenen Funktionen, überprüfen Sie, ob für die neue Klass
 einer abgeleiteten Instanzdeklaration angegeben worden sind. Falls nicht, fügen Sie diese noch hinzu und begründen Sie Ihre Antwort.
 
 Hinweis: Verwenden Sie nur die in aus der Vorlesung bekannten Standard-Typklassen.
+
+\newpage
+
+\begin{itemize}
+  \item []\inputminted{Haskell}{A5_2.hs}
+\end{itemize}
 
 \newpage
 
@@ -96,21 +102,13 @@ zurück. Die Ergebnisse aller Funktionen sollen in der Konsole angezeigt werden 
   
   Dabei verschiebt die Funktion translate einen Punkt um einen Vektor und die Funktion scale multipliziert einen Punkt komponentenweise mit einer Gleitkommazahl.
 
-\inputminted{Haskell}{A5_3a.hs}
-
-\newpage
-
   \item [(b)] Definieren Sie die Klasse Polygon und die Datentypen Triangle (allgemeines Dreieck) und Quad (allgemeines Viereck).
 
-\inputminted{Haskell}{A5_3b.hs}
-
-\newpage
-
-\item [(c)] Implementieren Sie die Datentypen Triangle und Quad als Instanzen von der Klasse Polygon und implementieren Sie dabei die von der Klasse Polygon definierten Funktionen.
+  \item [(c)] Implementieren Sie die Datentypen Triangle und Quad als Instanzen von der Klasse Polygon und implementieren Sie dabei die von der Klasse Polygon definierten Funktionen.
 
 Hinweis: Falls notwendig, recherchieren Sie die Formeln für die benötigten Flächenberechnungen.
 
-\inputminted{Haskell}{A5_3c.hs}
+\inputminted{Haskell}{A5_3.hs}
 \end{itemize}
 
 \newpage
@@ -123,17 +121,14 @@ Es soll eine Klasse Card für Spielkarten implementiert werden. Eine Spielkarte 
 \begin{itemize}
   \item [(a)] Implementieren Sie die Datentypen Rank, Suit und Card.
 
-\inputminted{Haskell}{A5_4a.hs}
-
 \item [(b)] Implementieren Sie Card als eine Instanz der Klasse Ord. Dabei entscheidet der Wert (Rank) welche Karte größer ist, bei zwei Karten gleichen Wertes entscheidet die Farbe (Suit), welche Karte größer ist. Bei gleichem Wert und gleicher Farbe sind beide Karten gleich groß. 
-
-\inputminted{Haskell}{A5_4b.hs}
 
 \item [(c)] Implementieren Sie den Datentypen Hand, der aus drei Karten besteht. Implementieren Sie anschließend eine Funktion value :: Hand $\rightarrow$ Integer, welchen den Wert der Hand zurückgibt. Dabei seien folgende Handkombinationen definiert:
 
+\centering
 \includegraphics[width=7cm]{2022_11_15_0a5a2eee0aef383b0ce9g-3}
 
-\inputminted{Haskell}{A5_4c.hs}
+\inputminted{Haskell}{A5_4.hs}
 \end{itemize}
 
 \newpage
@@ -155,27 +150,13 @@ Bearbeiten Sie hierfür folgende Schritte:
 \begin{itemize}
   \item [(a)] Implementieren Sie den Datentyp Currency, der entweder Euro, Dollar oder Yen repräsentiert. Dabei bestehen Euro und Dollar aus zwei Integern für Euro und Cents bzw. Dollar und Cents und Yen besteht nur aus einem Integer.
 
-  \begin{itemize}
-    \item []\inputminted{Haskell}{A5_5a.hs}
-  \end{itemize}
-
   \item [(b)] Leiten Sie den Datentyp Currency von der Klasse Show ab und geben Sie Euro und Dollar in der Form 12,03€ bzw. 14,60\$ an und Yen in der Form 120¥. Verwenden Sie hierbei nicht deriving (Show).
-  
-  \begin{itemize}
-    \item []\inputminted{Haskell}{A5_5b.hs}
-  \end{itemize}
 
   \item [(c)] Schreiben Sie eine Funktion toEuro, die eine Currency entgegennimmt, den entsprechenden Betrag in Euro umrechnet und diesen dann als Currency zurück gibt.
-  
-  \begin{itemize}
-    \item []\inputminted{Haskell}{A5_5c.hs}
-  \end{itemize}
 
   \item [(d)] Leiten Sie den Datentyp Currency von den Klassen Eq und Ord ab. Beachten Sie dabei, dass verschiedene Currencies verglichen werden können. Verwenden Sie hierbei nicht deriving (Eq, Ord). Geben Sie ein Beispiel als Kommentar an.
   
-  \begin{itemize}
-    \item []\inputminted{Haskell}{A5_5d.hs}
-  \end{itemize}
+  \inputminted{Haskell}{A5_5.hs}
 
 \end{itemize}
 
