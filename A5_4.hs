@@ -1,6 +1,6 @@
 
-data Rank = Seven | Eight | Nine | Ten | Jack | Queen | King | Ace deriving (Show, Eq, Enum, Ord)
-data Suit = Diamond | Heart | Spade | Club deriving (Show, Eq, Enum, Ord)
+data Rank = Seven | Eight | Nine | Ten | Jack | Queen | King | Ace deriving (Show, Eq, Ord)
+data Suit = Diamond | Heart | Spade | Club deriving (Show, Eq, Ord)
 data Card = MkCard {
     rank :: Rank,
     suit :: Suit
@@ -24,7 +24,7 @@ myHand :: Hand
 myHand = MkHand card1 card2 card3
 
 card1 :: Card
-card1 = MkCard King Heart
+card1 = MkCard King Club
 
 card2 :: Card
 card2 = MkCard Nine Heart
